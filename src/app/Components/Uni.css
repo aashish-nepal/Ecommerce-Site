@@ -1,0 +1,450 @@
+/* Navbar Styles */
+.navbar-nav a {
+  color: black;
+  font-size: large;
+}
+.navbar-nav span {
+  width: 20px;
+  height: 20px;
+  font-size: small;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+
+.dropend{
+  padding: 3px 3px;
+}
+
+.dropend .btn{
+  background-color: #6390B9;
+  color: white;
+  width: 200px;
+}
+
+.dropend .btn:hover{
+  background-color: #FD732D;
+}
+
+/* Icon Styles */
+.bi-heart, .bi-basket3 {
+  font-size: x-large;
+}
+
+/* Button Styles */
+.btn-group {
+  width: 100%;
+  max-width: 250px;
+}
+
+.bt-group {
+  text-align: start;
+  font-size: large;
+  color: white;
+}
+
+.bttn {
+  color: white;
+  background: #ffca2c;
+}
+
+.bttn:hover {
+  color: white;
+  background: #ffd75e;
+}
+
+.bttns {
+  color: #595c5f;
+}
+
+.bi-search {
+  color: white;
+}
+
+.btnl {
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  max-width: 180px;
+  font-weight: bold;
+  font-size: large;
+  color: rgb(91, 91, 199);
+  background: white;
+}
+
+.btnl span {
+  font-weight: 400;
+  color: red;
+  font-size: smaller;
+}
+
+.btnl:hover {
+  color: white;
+  background: black;
+}
+
+.sesilde {
+  padding-top: 10px;
+}
+
+/* Carousel Styles */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #ffca2c;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 30%;
+  text-align: start;
+  animation: slideInRight 1s ease-out;
+}
+
+.carousel-caption h5 {
+  font-weight: bold;
+  font-size: small;
+  color: black;
+}
+
+.carousel-caption h2 {
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+}
+
+/* Link Styles */
+.slink a {
+  padding: 5px 5px;
+  margin-right: 15px;
+}
+
+.aone {
+  border: 1px rgba(40, 40, 222, 0.763) solid;
+  color: rgba(40, 40, 222, 0.763);
+  font-weight: bolder;
+}
+
+.aone:hover {
+  background: black;
+}
+
+.atwo {
+  background-color: #ffca2c;
+  font-weight: bolder;
+}
+
+.atwo:hover {
+  background-color: rgba(0, 128, 0, 0.858);
+}
+
+/* Image Styles */
+.zoom-img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-img:hover {
+  transform: scale(0.9);
+}
+
+/* General Styles */
+.datanav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.nav {
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  gap: 10px;
+}
+
+.datah1 {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.datadiv {
+  width: 30%;
+  border: 1px solid gainsboro;
+  padding: 20px;
+  height: 330px;
+  margin: 18px;
+  text-align: center;
+}
+
+.dataimg {
+  height: 200px;
+  max-width: 100%;
+}
+
+.datatitle {
+  font-size: medium;
+  padding: 20px 0;
+}
+
+.datatitle a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link.active {
+  color: #ffca2c;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav-link.selected {
+  font-weight: bold;
+}
+
+.nav-link {
+  color: black;
+}
+
+/* List Styles */
+.list-border {
+  border: 1px solid gainsboro;
+  border-left: 10px solid #ffca2c;
+}
+
+.list-group {
+  text-align: center;
+}
+
+.list-group-item {
+  padding: 12px 0px;
+}
+
+.listh3 {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.795);
+  color: white;
+}
+
+/* Additional Styles */
+.datadivtwo {
+  width: 25%;
+  padding: 20px;
+  height: 200px;
+  margin: 25px;
+}
+
+.dataimgtwo {
+  height: 100px;
+  max-width: 200px;
+}
+
+.datatitletwo {
+  font-size: x-small;
+  padding: 20px 0px;
+}
+
+.datatitletwo a {
+  text-decoration: none;
+  color: black;
+}
+
+.background {
+  background-color: #333E48;
+}
+
+.back img {
+  position: relative;
+  left: 30%;
+  width: 80px;
+}
+
+.foot {
+  padding-top: 80px;
+}
+
+.foot .btn {
+  padding: 6px 15px;
+  background-color: #ffca2c;
+}
+
+.foot .btn:hover {
+  background-color: rgba(0, 128, 0, 0.858);
+}
+
+.foot h1 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  padding: 30px 0;
+}
+
+.footcol {
+  padding-top: 0;
+}
+
+.footcol h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.footcol h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.footcol p {
+  font-size: 0.875rem;
+  padding: 10px 0;
+}
+
+.footlink a {
+  text-align: start;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 5px 0;
+}
+
+.footlink a:hover {
+  text-decoration: none;
+  color: #ffca2c;
+}
+
+.lastfoot h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footlinktwo a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  gap: 10px;
+}
+
+.footlinktwo li {
+  list-style: none;
+}
+
+.last{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.last h4{
+  font-size: large;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: x-small;
+  }
+
+  .carousel-caption h2 {
+    font-size: small;
+  }
+
+  .slink a {
+    padding: 2px 5px;
+    margin-right: 10px;
+    font-size: x-small;
+  }
+
+  .sesilde {
+    padding-top: 3px;
+  }
+
+  .list-border {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .datadiv{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0px;
+  }
+
+  .dataimg{
+    width: 200px;
+  }
+
+  .datah1{
+    font-size: x-large;
+  }
+
+  .datadivtwo {
+    width: 30%;
+    margin-bottom: 10px;
+    padding: 0px;
+  }
+
+  .dataimgtwo {
+    width: 100px;
+  }
+
+  .figure {
+    order: -1;
+    margin-bottom: 15px;
+    display: none;
+  }
+
+  .list-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: block; /* Ensure list group is visible */
+  }
+
+  .list-group-item {
+    display: none; /* Hide all list items */
+  }
+
+  .listh3 {
+    display: block; /* Ensure listh3 is visible */
+  }
+
+  .footlink a{
+    text-align: center;
+  }
+
+  .footcol h4{
+    text-align: center;
+  }
+
+  .last{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .last h4{
+    font-size: large;
+    padding-bottom: 10px;
+  }
+
+  .footlinktwo{
+    font-size: medium;
+  }
+
+
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .datadiv {
+    width: 45%;
+  }
+
+  .datadivtwo {
+    width: 50%;
+    margin-bottom: 15px;
+  }
+}

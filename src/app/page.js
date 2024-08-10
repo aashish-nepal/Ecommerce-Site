@@ -1,113 +1,852 @@
-import Image from "next/image";
+"use client";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import "../app/Components/Uni.css";
 
-export default function Home() {
+function Page() {
+  const [products, setProducts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("electronics");
+  const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch all products once and store them
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setAllProducts(json));
+
+    // Fetch products based on the active category
+    fetch(`https://fakestoreapi.com/products/category/${activeCategory}`)
+      .then((res) => res.json())
+      .then((json) => setProducts(json));
+  }, [activeCategory]);
+
+  // Filter the women's clothing products for the last section
+  const womensClothing = allProducts.filter(
+    (product) => product.category === "women's clothing"
+  );
+
+  const mensClothing = allProducts.filter(
+    (product) => product.category === "men's clothing"
+  );
+
+  const electronics = allProducts.filter(
+    (product) => product.category === "electronics"
+  );
+
+  const jewelery = allProducts.filter(
+    (product) => product.category === "jewelery"
+  );
+
+  const handleCategoryClick = (category, event) => {
+    event.preventDefault();
+    setActiveCategory(category);
+    window.scrollBy({
+      top: 100, // Adjust the value for the desired scroll amount
+      behavior: "smooth", // Smooth scrolling effect
+    });
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <section>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+              <div className="btn-group">
+                <button
+                  className="bt-group btn btn-warning dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false"
+                >
+                  <i className="bi bi-list"></i> Categories
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Speaker
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Portable
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Mobile
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Light
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Headphone
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Google Glass
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Drone
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Camera
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="btn-group dropend">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        3d Glass
+                      </button>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+              <form className="d-flex align-items-center gap-3" role="search">
+                <input
+                  className="form-control p-2"
+                  type="search"
+                  placeholder="Find products..."
+                />
+                <div className="btn-group">
+                  <button
+                    className="bttns bt-group btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false"
+                  >
+                    Categories
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Electronics
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Men's Clothes
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Women's Clothes
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Jewelery
+                      </a>
+                    </li>
+                  </ul>
+                  <button className="btn bttn" type="submit">
+                    <i className="bi bi-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div className="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+              <a className="btnl btn btn-secondary" href="#" role="button">
+                BLACK FRIDAY <br />
+                <span>Get 45% Off</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section>
+        <div className="container text-center py-4">
+          <div className="row">
+            {/* Main carousel for large screens */}
+            <div className="col-md-8 order-md-1 order-1">
+              <div id="carouselExampleCaptions" className="carousel slide">
+                <div className="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to={0}
+                    className="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  />
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to={1}
+                    aria-label="Slide 2"
+                  />
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to={2}
+                    aria-label="Slide 3"
+                  />
+                </div>
+                <div className="carousel-inner py-3 py-md-0">
+                  <div className="carousel-item active">
+                    <img
+                      src="./images/Front.png"
+                      className="d-block w-100"
+                      alt="img"
+                    />
+                    <div className="carousel-caption">
+                      <h5>Get 50% Off</h5>
+                      <h2>SHOP WISE WITH PRICE COMPARISONS</h2>
+                      <div className="slink">
+                        <a className="aone btn" href="#" role="button">
+                          VIEW COLLECTION
+                        </a>
+                        <a className="atwo btn" href="#" role="button">
+                          CATEGORIES
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item active">
+                    <img
+                      src="./images/Front.png"
+                      className="d-block w-100"
+                      alt="img"
+                    />
+                    <div className="carousel-caption">
+                      <h5>Get 50% Off</h5>
+                      <h2>SHOP WISE WITH PRICE COMPARISONS</h2>
+                      <div className="slink">
+                        <a
+                          className="aone btn btn-sm btn-md"
+                          href="#"
+                          role="button"
+                        >
+                          VIEW COLLECTION
+                        </a>
+                        <a className="atwo btn" href="#" role="button">
+                          CATEGORIES
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src="./images/Front.png"
+                      className="d-block w-100"
+                      alt="img"
+                    />
+                    <div className="carousel-caption">
+                      <h5>Get 50% Off</h5>
+                      <h2>SHOP WISE WITH PRICE COMPARISONS</h2>
+                      <div className="slink">
+                        <a className="aone btn" href="#" role="button">
+                          VIEW COLLECTION
+                        </a>
+                        <a className="atwo btn" href="#" role="button">
+                          CATEGORIES
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  />
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  />
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            {/* Additional carousels for smaller screens */}
+            <div className="col order-md-2 order-2 mb-3 mb-md-0">
+              <div id="carouselExample" className="carousel slide mb-3">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <a href="#">
+                      <img
+                        src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/banner-campaign-51-1-1.png"
+                        className="d-block w-100"
+                        alt="..."
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+              <div id="carouselExample" className="carousel slide sesilde">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <a href="#">
+                      <img
+                        src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/10/banner-campaign-61-1.jpg"
+                        className="d-block w-100"
+                        alt="..."
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section>
+        <div className="container text-center  py-md-5">
+          <div className="offer row">
+            <div className="col">
+              <a href="#">
+                <img
+                  className="zoom-img"
+                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_21-1-1-1.jpg"
+                  alt="img"
+                />
+              </a>
+            </div>
+            <div className="col">
+              <a href="#">
+                <img
+                  className="zoom-img"
+                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_31-1-1-1.png"
+                  alt="img"
+                />
+              </a>
+            </div>
+            <div className="col">
+              <a href="#">
+                <img
+                  className="zoom-img"
+                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_41-1-1-1.jpg"
+                  alt="img"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <section className="py-5">
+        <div className="container datanav">
+          <h1 className="datah1">Top Categories This Week</h1>
+          <ul className="nav">
+            <li className="nav-item">
+              <a
+                className={`nav-link ${
+                  activeCategory === "electronics" ? "active" : ""
+                }`}
+                aria-current="page"
+                href="#"
+                onClick={(e) => handleCategoryClick("electronics", e)}
+              >
+                Electronics
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className={`nav-link ${
+                  activeCategory === "men's clothing" ? "active" : ""
+                }`}
+                href="#"
+                onClick={(e) => handleCategoryClick("men's clothing", e)}
+              >
+                Men's Clothes
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className={`nav-link ${
+                  activeCategory === "women's clothing" ? "active" : ""
+                }`}
+                href="#"
+                onClick={(e) => handleCategoryClick("women's clothing", e)}
+              >
+                Women's Clothes
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className={`nav-link ${
+                  activeCategory === "jewelery" ? "active" : ""
+                }`}
+                href="#"
+                onClick={(e) => handleCategoryClick("jewelery", e)}
+              >
+                Jewellery
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="container d-flex flex-wrap justify-content-center">
+          {products.map((a) => (
+            <div className="datadiv" key={a.id}>
+              <img className="dataimg" src={a.image} alt={a.title} />
+              <h2 className="datatitle">
+                <Link href={`/details/${a.id}`}>{a.title}</Link>
+              </h2>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container list-border d-flex flex-column flex-md-row">
+          <div className="list-group col-md-3 mb-3 mb-md-0 text-center">
+            <h3 className="listh3 list-group-item list-group-item-action">
+              Women Clothing
+            </h3>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Speaker
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Portable
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Mobile
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Light
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Headphone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Google Glass
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Drone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Camera
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-warning"
+            >
+              3d Glass
+            </a>
+          </div>
+
+          <figure className="figure col-md-2 mb-3 mb-md-0">
+            <img
+              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/product-block-slider-women-4-1.jpg"
+              className="figure-img img-fluid"
+              alt="..."
+            />
+          </figure>
+
+          <div className="container d-flex flex-wrap">
+            {womensClothing.map((a) => (
+              <div className="datadivtwo" key={a.id}>
+                <img className="dataimgtwo" src={a.image} alt={a.title} />
+                <h2 className="datatitletwo">
+                  <Link href={`/details/${a.id}`}>{a.title}</Link>
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container list-border d-flex flex-column flex-md-row">
+          <div className="list-group col-md-3 mb-3 mb-md-0 text-center">
+            <h3 className="listh3 list-group-item list-group-item-action">
+              Men's Clothing
+            </h3>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Speaker
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Portable
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Mobile
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Light
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Headphone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Google Glass
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Drone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              Camera
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-success"
+            >
+              3d Glass
+            </a>
+          </div>
+
+          <figure className="figure col-md-2 mb-3 mb-md-0">
+            <img
+              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/man_slider_1_406x628-1.png"
+              className="figure-img img-fluid"
+              alt="..."
+            />
+          </figure>
+
+          <div className="container d-flex flex-wrap">
+            {mensClothing.map((a) => (
+              <div className="datadivtwo" key={a.id}>
+                <img className="dataimgtwo" src={a.image} alt={a.title} />
+                <h2 className="datatitletwo">
+                  <Link href={`/details/${a.id}`}>{a.title}</Link>
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container list-border d-flex flex-column flex-md-row">
+          <div className="list-group col-md-3 mb-3 mb-md-0 text-center">
+            <h3 className="listh3 list-group-item list-group-item-action">
+              Electronics
+            </h3>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Speaker
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Portable
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Mobile
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Light
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Headphone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Google Glass
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Drone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              Camera
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-danger"
+            >
+              3d Glass
+            </a>
+          </div>
+
+          <figure className="figure col-md-2 mb-3 mb-md-0">
+            <img
+              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/phone_slider_1_406x628-1-1.png"
+              className="figure-img img-fluid"
+              alt="..."
+            />
+          </figure>
+
+          <div className="container d-flex flex-wrap">
+            {electronics.map((a) => (
+              <div className="datadivtwo" key={a.id}>
+                <img className="dataimgtwo" src={a.image} alt={a.title} />
+                <h2 className="datatitletwo">
+                  <Link href={`/details/${a.id}`}>{a.title}</Link>
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-5">
+        <div className="container list-border d-flex flex-column flex-md-row">
+          <div className="list-group col-md-3 mb-3 mb-md-0 text-center">
+            <h3 className="listh3 list-group-item list-group-item-action">
+              Jewelery
+            </h3>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Speaker
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Portable
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Mobile
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Light
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Headphone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Google Glass
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Drone
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              Camera
+            </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action list-group-item-info"
+            >
+              3d Glass
+            </a>
+          </div>
+
+          <figure className="figure col-md-2 mb-3 mb-md-0">
+            <img
+              src="https://img.freepik.com/free-photo/display-shiny-elegant-gold-chain_23-2149635328.jpg?t=st=1723007565~exp=1723011165~hmac=34320b3634a73b70dc14786f69443fcf010c352e2bbd7a7265d7c1386df0b63b&w=360"
+              className="figure-img img-fluid"
+              alt="..."
+            />
+          </figure>
+
+          <div className="container d-flex flex-wrap">
+            {jewelery.map((a) => (
+              <div className="datadivtwo" key={a.id}>
+                <img className="dataimgtwo" src={a.image} alt={a.title} />
+                <h2 className="datatitletwo">
+                  <Link href={`/details/${a.id}`}>{a.title}</Link>
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
+
+export default Page;
