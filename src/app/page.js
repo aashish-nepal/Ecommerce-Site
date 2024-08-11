@@ -270,12 +270,12 @@ function Page() {
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Men's Clothes
+                        Men&apos;s Clothes
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
-                        Women's Clothes
+                        Women&apos;s Clothes
                       </a>
                     </li>
                     <li>
@@ -527,7 +527,7 @@ function Page() {
                 href="#"
                 onClick={(e) => handleCategoryClick("men's clothing", e)}
               >
-                Men's Clothes
+                Men&apos;s Clothes
               </a>
             </li>
             <li className="nav-item">
@@ -538,7 +538,7 @@ function Page() {
                 href="#"
                 onClick={(e) => handleCategoryClick("women's clothing", e)}
               >
-                Women's Clothes
+                Women&apos;s Clothes
               </a>
             </li>
             <li className="nav-item">
@@ -656,7 +656,7 @@ function Page() {
         <div className="container list-border d-flex flex-column flex-md-row">
           <div className="list-group col-md-3 mb-3 mb-md-0 text-center">
             <h3 className="listh3 list-group-item list-group-item-action">
-              Men's Clothing
+              Men&apos;s Clothing
             </h3>
             <a
               href="#"
