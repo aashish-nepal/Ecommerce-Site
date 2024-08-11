@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "../app/Components/Uni.css";
+import Image from 'next/image';
 
 function Page() {
   const [products, setProducts] = useState([]);
@@ -64,7 +65,7 @@ function Page() {
                 </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
                         class="btn dropdown-toggle"
@@ -73,70 +74,90 @@ function Page() {
                       >
                         Speaker
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Portable
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Mobile
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Light
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Headphone
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
@@ -151,56 +172,72 @@ function Page() {
                       >
                         Google Glass
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Drone
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         Camera
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   <li>
-                    <div class="btn-group dropend">
+                    <div className="btn-group dropend">
                       <button
                         type="button"
-                        class="btn dropdown-toggle"
+                        className="btn dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
                         3d Glass
                       </button>
-                      <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </li>
@@ -294,10 +331,12 @@ function Page() {
                 </div>
                 <div className="carousel-inner py-3 py-md-0">
                   <div className="carousel-item active">
-                    <img
-                      src="./images/Front.png"
-                      className="d-block w-100"
+                    <Image
+                      src="/images/Front.png"
+                      className="d-block w-100 frontimg"
                       alt="img"
+                      width={500}
+                      height={500} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -313,10 +352,12 @@ function Page() {
                     </div>
                   </div>
                   <div className="carousel-item active">
-                    <img
-                      src="./images/Front.png"
-                      className="d-block w-100"
+                    <Image
+                      src="/images/Front.png"
+                      className="d-block w-100 frontimg"
                       alt="img"
+                      width={500}
+                      height={500} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -336,10 +377,12 @@ function Page() {
                     </div>
                   </div>
                   <div className="carousel-item">
-                    <img
-                      src="./images/Front.png"
-                      className="d-block w-100"
+                  <Image
+                      src="/images/Front.png"
+                      className="d-block w-100 frontimg"
                       alt="img"
+                      width={500}
+                      height={500} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -388,10 +431,12 @@ function Page() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <a href="#">
-                      <img
-                        src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/banner-campaign-51-1-1.png"
-                        className="d-block w-100"
+                      <Image
+                        src="/images/banner.png"
+                        className="d-block w-100 banimg"
                         alt="..."
+                        width={200} 
+                        height={235}
                       />
                     </a>
                   </div>
@@ -402,10 +447,12 @@ function Page() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <a href="#">
-                      <img
-                        src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/10/banner-campaign-61-1.jpg"
-                        className="d-block w-100"
+                      <Image
+                        src="/images/banner1.jpg"
+                        className="d-block w-100 banimg"
                         alt="..."
+                        width={200} 
+                        height={235}
                       />
                     </a>
                   </div>
@@ -419,30 +466,36 @@ function Page() {
       <section>
         <div className="container text-center  py-md-5">
           <div className="offer row">
-            <div className="col">
+            <div className="col px-0">
               <a href="#">
-                <img
+                <Image
                   className="zoom-img"
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_21-1-1-1.jpg"
+                  src="/images/banner2.jpg"
                   alt="img"
+                  width={200} 
+                  height={250}
                 />
               </a>
             </div>
             <div className="col">
               <a href="#">
-                <img
+              <Image
                   className="zoom-img"
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_31-1-1-1.png"
+                  src="/images/banner3.png"
                   alt="img"
+                  width={200} 
+                  height={250}
                 />
               </a>
             </div>
             <div className="col">
               <a href="#">
-                <img
+              <Image
                   className="zoom-img"
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2021/05/offer_banner_41-1-1-1.jpg"
+                  src="/images/banner4.jpg"
                   alt="img"
+                  width={200} 
+                  height={250}
                 />
               </a>
             </div>
@@ -577,10 +630,12 @@ function Page() {
           </div>
 
           <figure className="figure col-md-2 mb-3 mb-md-0">
-            <img
-              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/product-block-slider-women-4-1.jpg"
+            <Image
+              src="/images/women.jpg"
               className="figure-img img-fluid"
               alt="..."
+              width={200} 
+              height={0}
             />
           </figure>
 
@@ -660,10 +715,12 @@ function Page() {
           </div>
 
           <figure className="figure col-md-2 mb-3 mb-md-0">
-            <img
-              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/man_slider_1_406x628-1.png"
+            <Image
+              src="/images/men.png"
               className="figure-img img-fluid"
               alt="..."
+              width={200} 
+              height={0}
             />
           </figure>
 
@@ -743,10 +800,12 @@ function Page() {
           </div>
 
           <figure className="figure col-md-2 mb-3 mb-md-0">
-            <img
-              src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2018/07/phone_slider_1_406x628-1-1.png"
+            <Image
+              src="/images/electronic.png"
               className="figure-img img-fluid"
               alt="..."
+              width={200} 
+              height={0}
             />
           </figure>
 
@@ -826,10 +885,12 @@ function Page() {
           </div>
 
           <figure className="figure col-md-2 mb-3 mb-md-0">
-            <img
-              src="https://img.freepik.com/free-photo/display-shiny-elegant-gold-chain_23-2149635328.jpg?t=st=1723007565~exp=1723011165~hmac=34320b3634a73b70dc14786f69443fcf010c352e2bbd7a7265d7c1386df0b63b&w=360"
+            <Image
+              src="/images/jewelery.jpg"
               className="figure-img img-fluid"
               alt="..."
+              width={200} 
+              height={250}
             />
           </figure>
 

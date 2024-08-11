@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import "../../app/Components/Uni.css";
 
 function Header() {
@@ -11,9 +12,12 @@ function Header() {
           <div className="container">
             {/* Logo on the left */}
             <a className="navbar-brand" href="#">
-              <img
+              <Image
                 src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/logo_home-1.png"
                 alt="Logo"
+                width={150}  // Specify the width of your logo
+                height={30}  // Specify the height of your logo
+                priority     // Ensures this image is loaded eagerly
               />
             </a>
 

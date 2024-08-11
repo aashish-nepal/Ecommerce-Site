@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 function Footer() {
   return (
     <>
@@ -19,32 +19,42 @@ function Footer() {
             <div className="col-12 col-md-4 footcol mb-4">
               <h2>We Use Safe Payments</h2>
               <div>
-                <img
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/skril-1-1.png"
+                <Image
+                  src="/images/skril.png"
                   alt="Skrill"
+                  width={50}  // Adjust the width as needed
+                  height={50}  // Adjust the height as needed
                   className="img-fluid"
                 />
-                <img
-                  className="px-4 img-fluid"
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/palypal-1-1.png"
+                <Image
+                  src="/images/palypal.png"
                   alt="PayPal"
+                  width={100}  // Adjust the width as needed
+                  height={50}  // Adjust the height as needed
+                  className="px-4 img-fluid"
                 />
-                <img
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/american_express-1-1.png"
+                <Image
+                  src="/images/american_express.png"
                   alt="American Express"
+                  width={80}  // Adjust the width as needed
+                  height={50}  // Adjust the height as needed
                   className="img-fluid"
                 />
               </div>
               <p className="pt-3">Secured by:</p>
               <div className="py-4">
-                <img
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/norton_av_logo1-1.png"
+                <Image
+                  src="/images/norton.png"
                   alt="Norton AV"
+                  width={100}  // Adjust the width as needed
+                  height={50}  // Adjust the height as needed
                   className="img-fluid"
                 />
-                <img
-                  src="https://demo.xpeedstudio.com/marketov2/wp-content/uploads/2020/06/mcAfee_logo1-1.png"
+                <Image
+                  src="/images/mcAfee.png"
                   alt="McAfee"
+                  width={100}  // Adjust the width as needed
+                  height={50}  // Adjust the height as needed
                   className="img-fluid"
                 />
               </div>
@@ -84,15 +94,17 @@ function Footer() {
       </section>
       <section className="bg-warning">
         <div className="last container">
-          <div> 
-          <h4>© 2021 XpeedStudio All Rights Reserved</h4></div>
-          <div>  
+          <div>
+            <h4>© 2021 XpeedStudio All Rights Reserved</h4>
+          </div>
+          <div>
             <ul className="footlinktwo d-flex flex-wrap justify-content-center justify-content-md-end">
               <li className="me-3"><a href="#"><i className="bi bi-facebook"></i> Facebook</a></li>
               <li className="me-3"><a href="#"><i className="bi bi-twitter"></i> Twitter</a></li>
               <li className="me-3"><a href="#"><i className="bi bi-pinterest"></i> Pinterest</a></li>
               <li className="me-3"><a href="#"><i className="bi bi-instagram"></i> Instagram</a></li>
-            </ul></div>
+            </ul>
+          </div>
         </div>
       </section>
     </>
