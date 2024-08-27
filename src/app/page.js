@@ -336,7 +336,7 @@ function Page() {
                       className="d-block w-100 frontimg"
                       alt="img"
                       width={500}
-                      height={500} 
+                      height={480} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -357,7 +357,7 @@ function Page() {
                       className="d-block w-100 frontimg"
                       alt="img"
                       width={500}
-                      height={500} 
+                      height={480} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -382,7 +382,7 @@ function Page() {
                       className="d-block w-100 frontimg"
                       alt="img"
                       width={500}
-                      height={500} 
+                      height={480} 
                     />
                     <div className="carousel-caption">
                       <h5>Get 50% Off</h5>
@@ -436,7 +436,7 @@ function Page() {
                         className="d-block w-100 banimg"
                         alt="..."
                         width={200} 
-                        height={235}
+                        height={220}
                       />
                     </a>
                   </div>
