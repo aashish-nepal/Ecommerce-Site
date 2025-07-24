@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import BootstrapClient from "./components/BootstrapClient"; // Import the Bootstrap JS handler
+import BootstrapClient from "./Components/BootstrapClient"; // Import the Bootstrap JS handler
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
