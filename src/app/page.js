@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import Header from "./components/Header/Header";
-import HeroCarousel from "./components/HeroCarousel/HeroCarousel";
-import BannerGrid from "./components/BannerGrid/BannerGrid";
-import CategoryNav from "./components/CategoryNav/CategoryNav";
-import ProductGrid from "./components/ProductGrid/ProductGrid";
-import CategorySection from "./components/CategorySection/CategorySection";
-
+import Header from "./components/header/Header";
+import HeroCarousel from "./components/heroCarousel/HeroCarousel";
+import BannerGrid from "./components/bannerGrid/BannerGrid";
+import CategoryNav from "./components/categoryNav/CategoryNav";
+import ProductGrid from "./components/productGrid/ProductGrid";
+import CategorySection from "./components/categorySection/CategorySection";
 
 
 export default function Home() {
