@@ -13,9 +13,11 @@ function Footer() {
           <div className="row">
             {/* Brand Column */}
             <div className="col-12 mb-4">
-              <img
+              <Image
                 src="/images/mark.png"
                 alt="Marketo Logo"
+                width={100}
+                height={30}
                 className="img-fluid"
                 style={{
                   maxHeight: "30px",
@@ -72,8 +74,7 @@ function Footer() {
                 />
               </div>
               <p className="text-muted small mb-2">Secured by:</p>
-              <div className="d-flex flex-wrap align-items-center gap-3">
-              </div>
+              <div className="d-flex flex-wrap align-items-center gap-3"></div>
             </div>
 
             {/* Links Column */}
