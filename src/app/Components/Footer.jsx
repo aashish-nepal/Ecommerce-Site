@@ -16,8 +16,8 @@ function Footer() {
               <Image
                 src="/images/mark.png"
                 alt="Marketo Logo"
-                width={100}
-                height={30}
+                width={150}
+                height={45}
                 className="img-fluid"
                 style={{
                   maxHeight: "30px",
