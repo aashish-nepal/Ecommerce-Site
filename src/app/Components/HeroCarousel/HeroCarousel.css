@@ -1,0 +1,303 @@
+/* ========== Carousel Styles ========== */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #ffca2c;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60%;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+  transform: scale(1.1);
+  background-color: #ffd700;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  text-align: start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.carousel-item.active .carousel-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide image animation */
+.slide-image {
+  transform: scale(1);
+  transition: transform 8s ease-in-out;
+}
+
+.carousel-item.active .slide-image {
+  transform: scale(1.05);
+}
+
+.carousel-item,
+.carousel-item img.frontimg {
+  height: 580px; /* or try 70vh for responsive height */
+}
+
+.carousel-item img.frontimg {
+  object-fit: cover; /* maintains image aspect ratio */
+}
+
+
+/* Text animations with delays */
+.slide-title,
+.slide-heading,
+.slink {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.slide-title {
+  transition: all 0.6s ease 0.3s;
+}
+
+.slide-heading {
+  transition: all 0.6s ease 0.5s;
+}
+
+.slink {
+  transition: all 0.6s ease 0.7s;
+}
+
+.carousel-item.active .slide-title,
+.carousel-item.active .slide-heading,
+.carousel-item.active .slink {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.carousel-caption h5 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.carousel-caption h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 15px 0;
+}
+
+/* Link Styles */
+.slink a {
+  padding: 10px 20px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.slink a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.aone {
+  border: 2px solid rgba(40, 40, 222, 0.763);
+  color: rgba(40, 40, 222, 0.763);
+  font-weight: bolder;
+  border-radius: 30px;
+}
+
+.aone:hover {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.atwo {
+  background-color: #ffca2c;
+  font-weight: bolder;
+  border-radius: 30px;
+  color: black;
+}
+
+.atwo:hover {
+  background-color: rgba(0, 128, 0, 0.858);
+  color: white;
+}
+
+/* Banner hover image zoom */
+.image-container {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.banner-container {
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.banner-container:hover {
+  transform: translateY(-5px);
+}
+
+.banner-image {
+  transition: transform 0.5s ease;
+}
+
+.banner-container:hover .banner-image {
+  transform: scale(1.05);
+}
+
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.banner-container:hover .banner-overlay {
+  opacity: 1;
+}
+
+.banner-overlay-text {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ========== Responsive Breakpoints ========== */
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+  .carousel-caption {
+    top: 30%;
+    left: 12%;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .slink a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .banner-overlay-text {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (tablets: ≥576px to <992px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .carousel-caption {
+    top: 40%;
+    left: 12%;
+    right: 8%;
+  }
+  .carousel .frontimg {
+    object-fit: cover;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .slink a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .banner-overlay-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* HeroCarousel.css */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-caption {
+    top: 32%;
+    left: 12%;
+    right: 8%;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.4rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2.5rem;
+  }
+
+  .slink a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .carousel-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .carousel .frontimg {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-inner,
+  .carousel-item {
+    width: 100%;
+  }
+}
+
+
+/* Extra small devices (phones: <576px) */
+@media (max-width: 575.98px) {
+
+  .carousel-item img {
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    top: 36%;
+    left: 15%;
+    right: 10%;
+  }
+
+  .carousel-caption h5 {
+    font-size: 0.8rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .slink a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .banner-overlay-text {
+    font-size: 0.7rem;
+  }
+}

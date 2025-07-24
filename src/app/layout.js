@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import BootstrapClient from "./Components/BootstrapClient"; // Import the Bootstrap JS handler
+import BootstrapClient from "./components/BootstrapClient"; // Import the Bootstrap JS handler
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <BootstrapClient /> {/* Initialize Bootstrap JS */}
-        <Header />
+        <Navbar />
         {children}
         <Footer />
       </body>
